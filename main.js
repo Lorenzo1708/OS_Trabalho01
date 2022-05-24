@@ -2,7 +2,7 @@ var weight
 var height
 var age
 var sex
-var macronutrientList_meal_1 = {
+var macronutrientList_1 = {
     'food_1': {
         'carbohydrateSum': 4,
         'proteinSum': 5,
@@ -18,16 +18,16 @@ var macronutrientList_meal_1 = {
         'macronutrientSum': 15,
     }
 }
-var macronutrientList_meal_2 = {}
-var macronutrientList_meal_3 = {}
-var macronutrientList_meal_4 = {}
-var foodList_meal_1 = {
+var macronutrientList_2 = {}
+var macronutrientList_3 = {}
+var macronutrientList_4 = {}
+var foodList_1 = {
     'food_1': 1,
     'food_2': 1
 }
-var foodList_meal_2 = {}
-var foodList_meal_3 = {}
-var foodList_meal_4 = {}
+var foodList_2 = {}
+var foodList_3 = {}
+var foodList_4 = {}
 
 
 function mealSolver(macronutrientList, foodList) {
