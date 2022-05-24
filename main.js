@@ -86,8 +86,7 @@ window.onload = () => {
             mealSolver(macronutrientList_3, foodList_3)
             mealSolver(macronutrientList_4, foodList_4)
         }
-        else
-        {
+        else {
             document.getElementById('diet').innerHTML = '<span>EMPTY</span>'
         }
     }
