@@ -26,7 +26,7 @@ var foodList = {
 function mealSolver(macronutrientList, foodList) {
     calorieSum = {'max': 10 * weight + 6.25 * height - 5 * age + 5};
 
-    if (t == 1) {
+    if (sex == 1) {
         calorieSum = {'max': 10 * weight + 6.25 * height - 5 * age - 161};
     }
 
