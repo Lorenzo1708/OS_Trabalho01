@@ -1,11 +1,8 @@
-
-
-/*
-var q = 67
-var r = 176
-var s = 21
-var t = 0
-var object_1 = {
+var weight = 67
+var height = 176
+var age = 21
+var sex = 0
+var macronutrientList = {
     'v_a': {
         'a': 4,
         'a': 5,
@@ -21,42 +18,39 @@ var object_1 = {
         'e': 15,
     }
 }
-var object_2 = {
+var foodList = {
     'v_a': 1,
     'v_b': 1
 }
 
-function customSolver(object_1, object_2) {
-    d = {'max': 10 * q + 6.25 * r - 5 * s + 5};
+function mealSolver(macronutrientList, foodList) {
+    calorieSum = {'max': 10 * weight + 6.25 * height - 5 * age + 5};
 
     if (t == 1) {
-        d = {'max': 10 * q + 6.25 * r - 5 * s - 161};
+        calorieSum = {'max': 10 * weight + 6.25 * height - 5 * age - 161};
     }
 
     var solver =
         require('javascript-lp-solver'),
         result,
         model = {
-            'optimize': 'e',
+            'optimize': 'macronutrientSum',
             'opType': 'max',
             'constraints': {
-                'a': {'max': 3 / 4 * q},
-                'b': {'max': 2 / 4 * q},
-                'c': {'max': 1 / 4 * q},
-                'd': d
+                'carbohydrateSum': {'max': 3 / 4 * weight},
+                'proteinSum': {'max': 2 / 4 * weight},
+                'fatSum': {'max': 1 / 4 * weight},
+                'calorieSum': calorieSum
             },
-            'variables': object_1,
-            'ints': object_2
+            'variables': macronutrientList,
+            'ints': foodList
         };
 
     result = solver.Solve(model);
 
-    for (let name in object_1) {
+    for (let name in macronutrientList) {
         if (result[name] != undefined) {
             console.log(`${name}: ${result[name]}`)
         }
     }
 }
-
-customSolver(object_1, object_2)
-*/
