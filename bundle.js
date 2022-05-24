@@ -312,10 +312,10 @@ var foodList_4 = {
 
 
 function mealSolver(macronutrientList, foodList, meal) {
-    calorieSum = { 'max': 10 * weight + 6.25 * height - 5 * age + 5 }
+    calorieSum = { 'max': (10 * weight + 6.25 * height - 5 * age + 5) / 4 }
 
     if (sex == "2") {
-        calorieSum = { 'max': 10 * weight + 6.25 * height - 5 * age - 161 }
+        calorieSum = { 'max': (10 * weight + 6.25 * height - 5 * age - 161) / 4 }
     }
 
     var solver =
@@ -328,7 +328,7 @@ function mealSolver(macronutrientList, foodList, meal) {
                 'carbohydrateSum': { 'max': 3 / 4 * weight },
                 'proteinSum': { 'max': 2 / 4 * weight },
                 'fatSum': { 'max': 1 / 4 * weight },
-                'calorieSum': { 'max': calorieSum }
+                'calorieSum': calorieSum
             },
             'variables': macronutrientList,
             'ints': foodList
