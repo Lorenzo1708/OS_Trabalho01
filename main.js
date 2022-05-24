@@ -55,11 +55,15 @@ function mealSolver(macronutrientList, foodList) {
 
     result = solver.Solve(model)
 
+    document.getElementById('diet').innerHTML += '<span>Meal:</span><br>'
+
     for (let food in foodList) {
         if (result[food] != undefined) {
-            console.log(`${food}: ${result[food]}`)
+            document.getElementById('diet').innerHTML += `<span>${food} - ${result[food]}X</span><br>`
         }
     }
+
+    document.getElementById('diet').innerHTML += '<br><br>'
 }
 
 
@@ -75,13 +79,16 @@ window.onload = () => {
         sex = document.getElementById('sex').value
 
         if (weight != '' && height != '' && age != '' && sex != 'Sex') {
+            document.getElementById('diet').innerHTML = ''
+
             mealSolver(macronutrientList_1, foodList_1)
             mealSolver(macronutrientList_2, foodList_2)
             mealSolver(macronutrientList_3, foodList_3)
             mealSolver(macronutrientList_4, foodList_4)
         }
-        else {
-            document.getElementById('h4').innerText = 'EMPTY'
+        else
+        {
+            document.getElementById('diet').innerHTML = '<span>EMPTY</span>'
         }
     }
 }
